@@ -1,10 +1,10 @@
-import MyLib (getFuelRequirement)
+import MyLib (calculateFuel)
 
 main :: IO ()
 main = do
   contents <- getContents
   let masses = (map toInt (lines contents))
-  let fuelRequirements = (map getFuelRequirement masses)
+  let fuelRequirements = (map calculateFuel masses)
   let totalFuel = sum fuelRequirements
   putStr (show totalFuel)
 
