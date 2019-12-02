@@ -1,15 +1,15 @@
 module MyLib
-  ( getFuelRequirement,
-    calculateFuel,
+  ( fuelCost,
+    fuelCost',
   )
 where
 
-getFuelRequirement :: Integer -> Integer
-getFuelRequirement mass = (quot mass 3) - 2
+fuelCost :: Integer -> Integer
+fuelCost mass = (quot mass 3) - 2
 
-calculateFuel :: Integer -> Integer
-calculateFuel mass
-  | fuelRequirement > 0 = fuelRequirement + calculateFuel fuelRequirement
+fuelCost' :: Integer -> Integer
+fuelCost' mass
+  | fuelMass > 0 = fuelMass + fuelCost' fuelMass
   | otherwise = 0
   where
-    fuelRequirement = getFuelRequirement mass
+    fuelMass = fuelCost mass

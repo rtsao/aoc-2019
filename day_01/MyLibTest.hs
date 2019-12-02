@@ -1,6 +1,6 @@
 import MyLib
-  ( calculateFuel,
-    getFuelRequirement,
+  ( fuelCost,
+    fuelCost',
   )
 import Test.Tasty
 import Test.Tasty.HUnit
@@ -12,12 +12,12 @@ tests =
   testGroup
     "Tests"
     [ testCase "Fuel requirements" $ do
-        getFuelRequirement 12 @?= 2
-        getFuelRequirement 14 @?= 2
-        getFuelRequirement 1969 @?= 654
-        getFuelRequirement 100756 @?= 33583,
+        fuelCost 12 @?= 2
+        fuelCost 14 @?= 2
+        fuelCost 1969 @?= 654
+        fuelCost 100756 @?= 33583,
       testCase "Fuel requirements including fuel" $ do
-        calculateFuel 14 @?= 2
-        calculateFuel 1969 @?= 966
-        calculateFuel 100756 @?= 50346
+        fuelCost' 14 @?= 2
+        fuelCost' 1969 @?= 966
+        fuelCost' 100756 @?= 50346
     ]
