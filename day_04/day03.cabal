@@ -1,0 +1,14 @@
+cabal-version:       >=1.10
+
+name:                day04
+version:             0.1.0.0
+
+author:              Ryan Tsao
+maintainer:          ryan.j.tsao@gmail.com
+
+build-type:          Simple
+
+executable day04
+  main-is:             Main.hs
+  build-depends:       base >=4.12 && <4.13
+  default-language:    Haskell2010
