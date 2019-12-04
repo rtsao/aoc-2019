@@ -1,0 +1,34 @@
+cabal-version:       >=1.10
+
+name:                day03
+version:             0.1.0.0
+
+author:              Ryan Tsao
+maintainer:          ryan.j.tsao@gmail.com
+
+build-type:          Simple
+
+library
+  exposed-modules:     MyLib
+
+  build-depends:       base >=4.12 && <4.13, containers, split
+
+  default-language:    Haskell2010
+
+executable day03
+  main-is:             Main.hs
+  other-modules:       MyLib
+  build-depends:       base >=4.12 && <4.13, day03, containers, split
+  default-language:    Haskell2010
+
+test-suite day03-test
+  default-language:    Haskell2010
+  other-modules:       MyLib
+  type:                exitcode-stdio-1.0
+  main-is:             MyLibTest.hs
+  build-depends:
+    base >=4.12 && <4.13
+    , tasty >= 1.2.3
+    , tasty-hunit >= 0.10.0.2
+    , containers
+    , split
